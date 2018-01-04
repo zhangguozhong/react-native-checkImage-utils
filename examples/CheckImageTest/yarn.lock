@@ -2705,6 +2705,10 @@ react-devtools-core@^2.5.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+"react-native-check-image@https://github.com/zhangguozhong/react-native-checkImage-utils.git":
+  version "1.0.0"
+  resolved "https://github.com/zhangguozhong/react-native-checkImage-utils.git#da9ad01a08dd561ec9b774698662171bad0321ac"
+
 react-native@0.51.0:
   version "0.51.0"
   resolved "http://registry.npm.taobao.org/react-native/download/react-native-0.51.0.tgz#fe25934b3030fd323f3ca1a70f034133465955ed"

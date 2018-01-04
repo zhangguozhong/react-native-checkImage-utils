@@ -1,3 +1,5 @@
 rootProject.name = 'CheckImageTest'
+include ':react-native-check-image'
+project(':react-native-check-image').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-check-image/android')
 
 include ':app'

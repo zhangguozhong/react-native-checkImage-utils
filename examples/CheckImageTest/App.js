@@ -9,8 +9,11 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+    TouchableOpacity
 } from 'react-native';
+
+import RNCheckImageUtils from 'react-native-check-image'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,6 +23,17 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
+
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+      RNCheckImageUtils.check('hao',(error,result)=>{
+        console.log(result);
+      });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -32,6 +46,17 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+          <TouchableOpacity
+              onPress={()=>{
+                  RNCheckImageUtils.checkCamera('').then((result)=>{
+                      console.log(result);
+                  }).catch((err)=>{
+                      console.log(err.code);
+                  });
+              }}
+          >
+              <Text style={styles.textButton}>点击我</Text>
+          </TouchableOpacity>
       </View>
     );
   }
@@ -54,4 +79,8 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+    textButton:{
+      fontSize:17,
+        color:'orange'
+    }
 });
