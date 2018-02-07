@@ -1,5 +1,6 @@
 
 #import "RNCheckImage.h"
+#import "TestObject.h"
 
 @implementation RNCheckImage
 
@@ -10,6 +11,8 @@
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(checkCemera:(NSString*)name resovler:(RCTPromiseResolveBlock)resovler rejecter:(RCTPromiseRejectBlock)reject){
+    TestObject *testObj = [[TestObject alloc] init];
+    [testObj testFuc];
     if (name&&name.length>0) {
         resovler(name);
     }else{
